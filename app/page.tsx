@@ -27,6 +27,10 @@ import {
   X,
 } from "lucide-react";
 
+//yuki mencoba nambah image (apa ini dawg)
+import HageLogo from "@/components/ui/hage-logo";
+import Logo275 from "@/components/ui/275studiologo";
+//
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -98,8 +102,8 @@ export default function HomePage() {
       <nav className="sticky top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="flex items-center justify-between p-4 lg:px-12">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center animate-pulse-glow">
-              <Gamepad2 className="w-6 h-6 text-primary-foreground" />
+            <div className="w-10 h-10 bg-primary flex items-center justify-center animate-pulse-glow">
+              <HageLogo className="w-10 h-10 text-primary-foreground" />
             </div>
             <span className="text-2xl font-bold text-gradient">HAGE</span>
           </div>
@@ -376,19 +380,15 @@ export default function HomePage() {
             <div className="flex animate-marquee space-x-8 lg:space-x-16">
               {/* First set of logos */}
               {[
-                { name: "Pixel Forge Studios", icon: Target },
-                { name: "Neon Interactive", icon: Zap },
-                { name: "Quantum Labs", icon: Rocket },
-                { name: "Mystic Realm Games", icon: Star },
-                { name: "Urban Studios", icon: Building2 },
-                { name: "Retro Wave Games", icon: Trophy },
+                { name: "275 Studio", icon: Logo275 },
+                
               ].map((partner, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 flex items-center space-x-3 lg:space-x-4 bg-card/50 backdrop-blur-sm rounded-2xl px-4 sm:px-6 lg:px-8 py-4 lg:py-6 border border-border/50 hover:border-primary/50 transition-colors"
+                  className="flex-shrink-0 flex items-center space-x-3 lg:space-x-4 bg-card/50 backdrop-blur-sm  px-4 sm:px-6 lg:px-8 py-4 lg:py-6 border border-border/50 hover:border-primary/50 transition-colors"
                 >
-                  <div className="w-10 lg:w-12 h-10 lg:h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <partner.icon className="w-5 lg:w-6 h-5 lg:h-6 text-primary" />
+                  <div className="w-10 lg:w-12 h-10 lg:h-12 bg-primary/10  flex items-center justify-center">
+                    <partner.icon className="w-5 lg:w-10 h-5 lg:h-10 text-primary" />
                   </div>
                   <span className="text-sm sm:text-base lg:text-lg font-semibold whitespace-nowrap">
                     {partner.name}
@@ -398,19 +398,16 @@ export default function HomePage() {
 
               {/* Duplicate set for seamless loop */}
               {[
-                { name: "Pixel Forge Studios", icon: Target },
-                { name: "Neon Interactive", icon: Zap },
-                { name: "Quantum Labs", icon: Rocket },
-                { name: "Mystic Realm Games", icon: Star },
-                { name: "Urban Studios", icon: Building2 },
-                { name: "Retro Wave Games", icon: Trophy },
+                  { name: "275 Studio", icon: Logo275 },
+
+                
               ].map((partner, index) => (
                 <div
                   key={`duplicate-${index}`}
-                  className="flex-shrink-0 flex items-center space-x-3 lg:space-x-4 bg-card/50 backdrop-blur-sm rounded-2xl px-4 sm:px-6 lg:px-8 py-4 lg:py-6 border border-border/50 hover:border-primary/50 transition-colors"
+                  className="flex-shrink-0 flex items-center space-x-3 lg:space-x-4 bg-card/50 backdrop-blur-sm  px-4 sm:px-6 lg:px-8 py-4 lg:py-6 border border-border/50 hover:border-primary/50 transition-colors"
                 >
-                  <div className="w-10 lg:w-12 h-10 lg:h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <partner.icon className="w-5 lg:w-6 h-5 lg:h-6 text-primary" />
+                  <div className="w-10 lg:w-12 h-10 lg:h-12 bg-primary/10  flex items-center justify-center">
+                    <partner.icon className="w-5 lg:w-10 h-5 lg:h-10 text-primary" />
                   </div>
                   <span className="text-sm sm:text-base lg:text-lg font-semibold whitespace-nowrap">
                     {partner.name}
@@ -469,14 +466,12 @@ export default function HomePage() {
               <div className="w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-6 lg:p-8 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-20 lg:w-24 h-20 lg:h-24 bg-primary rounded-3xl flex items-center justify-center mx-auto mb-4 lg:mb-6 animate-pulse-glow">
-                    <Gamepad2 className="w-10 lg:w-12 h-10 lg:h-12 text-primary-foreground" />
+                    <HageLogo className="w-10 lg:w-20 h-10 lg:h-20 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4">
-                    Simple Joy
+                    Simple Joy for Everyone
                   </h3>
-                  <p className="text-muted-foreground">
-                    Accessible to Everyone
-                  </p>
+                  
                 </div>
               </div>
             </div>
@@ -603,8 +598,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Gamepad2 className="w-5 h-5 text-primary-foreground" />
+              <div className="w-8 h-8 bg-primary  flex items-center justify-center">
+                <HageLogo className="w-8 h-8 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-gradient">HAGE</span>
             </div>
