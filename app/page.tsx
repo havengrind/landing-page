@@ -209,7 +209,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-12 py-12 sm:py-20 lg:py-32">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div
               className={`space-y-6 lg:space-y-8 ${
                 isVisible ? "animate-slide-in-up" : "opacity-0"
@@ -247,7 +247,7 @@ export default function HomePage() {
             </div>
 
             <div
-              className={`relative order-first lg:order-last ${
+              className={`relative order-first sm:order-last ${
                 isVisible ? "animate-slide-in-up" : "opacity-0"
               }`}
               style={{ animationDelay: "0.2s" }}
@@ -255,12 +255,12 @@ export default function HomePage() {
               <div className="relative w-full h-64 sm:h-80 lg:h-[400px]">
                 {/* 3D Game Console Mockup */}
                 <div className="absolute inset-0 bg-gradient-to-br from-card to-muted rounded-3xl shadow-2xl animate-float">
-                  <div className="p-6 lg:p-8 h-full flex flex-col justify-center items-center">
+                  <div className="p-6 lg:p-8 aspect-video flex flex-col justify-center items-center">
                     <Image
                       src={"/hero.gif"}
                       fill
                       alt="hero.gif"
-                      className="rounded-md"
+                      className="rounded-md aspect-video"
                       unoptimized
                     />
                   </div>
