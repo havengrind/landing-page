@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,20 +8,15 @@ import { Badge } from "@/components/ui/badge";
 import {
   Mail,
   Phone,
-  Gamepad2,
   Users,
   Zap,
   Globe,
   Star,
   Play,
-  Code,
   Sparkles,
   Moon,
   Sun,
   Building2,
-  Trophy,
-  Target,
-  Rocket,
   Menu,
   X,
 } from "lucide-react";
@@ -30,6 +24,7 @@ import {
 //yuki mencoba nambah image (apa ini dawg)
 import HageLogo from "@/components/ui/hage-logo";
 import Logo275 from "@/components/ui/275studiologo";
+import Image from "next/image";
 //
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -74,7 +69,7 @@ export default function HomePage() {
     }
   };
 
-  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+  const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
@@ -102,8 +97,8 @@ export default function HomePage() {
       <nav className="sticky top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="flex items-center justify-between p-4 lg:px-12">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary flex items-center justify-center animate-pulse-glow">
-              <HageLogo className="w-10 h-10 text-primary-foreground" />
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center animate-pulse-glow">
+              <HageLogo className="size-10 rounded-lg text-primary-foreground" />
             </div>
             <span className="text-2xl font-bold text-gradient">HAGE</span>
           </div>
@@ -240,7 +235,10 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground group"
+                  className="bg-primary rounded-sm hover:bg-primary/90 text-primary-foreground dark:text-white group"
+                  onClick={() => {
+                    window.location.href = `https://hagegames.com`;
+                  }}
                 >
                   <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Browse Games
@@ -254,30 +252,17 @@ export default function HomePage() {
               }`}
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="relative w-full h-64 sm:h-80 lg:h-[500px]">
+              <div className="relative w-full h-64 sm:h-80 lg:h-[400px]">
                 {/* 3D Game Console Mockup */}
                 <div className="absolute inset-0 bg-gradient-to-br from-card to-muted rounded-3xl shadow-2xl animate-float">
                   <div className="p-6 lg:p-8 h-full flex flex-col justify-center items-center">
-                    <div className="w-32 sm:w-48 h-20 sm:h-32 bg-primary/20 rounded-2xl mb-4 lg:mb-6 flex items-center justify-center">
-                      <div className="w-20 sm:w-32 h-12 sm:h-20 bg-primary rounded-lg flex items-center justify-center">
-                        <Code className="w-6 sm:w-8 h-6 sm:h-8 text-primary-foreground" />
-                      </div>
-                    </div>
-                    <div className="flex space-x-3 lg:space-x-4 mb-3 lg:mb-4">
-                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary rounded-full flex items-center justify-center">
-                        <span className="text-primary-foreground font-bold text-sm sm:text-base">
-                          A
-                        </span>
-                      </div>
-                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-accent rounded-full flex items-center justify-center">
-                        <span className="text-accent-foreground font-bold text-sm sm:text-base">
-                          B
-                        </span>
-                      </div>
-                    </div>
-                    <div className="w-12 sm:w-16 h-12 sm:h-16 bg-muted rounded-full flex items-center justify-center">
-                      <div className="w-6 sm:w-8 h-6 sm:h-8 bg-foreground rounded-full" />
-                    </div>
+                    <Image
+                      src={"/hero.gif"}
+                      fill
+                      alt="hero.gif"
+                      className="rounded-md"
+                      unoptimized
+                    />
                   </div>
                 </div>
 
@@ -376,45 +361,8 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="relative overflow-hidden">
-            <div className="flex animate-marquee space-x-8 lg:space-x-16">
-              {/* First set of logos */}
-              {[
-                { name: "275 Studio", icon: Logo275 },
-                
-              ].map((partner, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 flex items-center space-x-3 lg:space-x-4 bg-card/50 backdrop-blur-sm  px-4 sm:px-6 lg:px-8 py-4 lg:py-6 border border-border/50 hover:border-primary/50 transition-colors"
-                >
-                  <div className="w-10 lg:w-12 h-10 lg:h-12 bg-primary/10  flex items-center justify-center">
-                    <partner.icon className="w-5 lg:w-10 h-5 lg:h-10 text-primary" />
-                  </div>
-                  <span className="text-sm sm:text-base lg:text-lg font-semibold whitespace-nowrap">
-                    {partner.name}
-                  </span>
-                </div>
-              ))}
-
-              {/* Duplicate set for seamless loop */}
-              {[
-                  { name: "275 Studio", icon: Logo275 },
-
-                
-              ].map((partner, index) => (
-                <div
-                  key={`duplicate-${index}`}
-                  className="flex-shrink-0 flex items-center space-x-3 lg:space-x-4 bg-card/50 backdrop-blur-sm  px-4 sm:px-6 lg:px-8 py-4 lg:py-6 border border-border/50 hover:border-primary/50 transition-colors"
-                >
-                  <div className="w-10 lg:w-12 h-10 lg:h-12 bg-primary/10  flex items-center justify-center">
-                    <partner.icon className="w-5 lg:w-10 h-5 lg:h-10 text-primary" />
-                  </div>
-                  <span className="text-sm sm:text-base lg:text-lg font-semibold whitespace-nowrap">
-                    {partner.name}
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="flex justify-center container">
+            <Logo275 className="size-40 md:size-[300px]" />
           </div>
         </div>
       </section>
@@ -471,7 +419,6 @@ export default function HomePage() {
                   <h3 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4">
                     Simple Joy for Everyone
                   </h3>
-                  
                 </div>
               </div>
             </div>
@@ -580,32 +527,22 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
-
-          <div className="mt-8 lg:mt-12">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground group"
-            >
-              <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Get In Touch
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 px-4 sm:px-6 lg:px-12 py-8 lg:py-12 border-t border-border/50">
+      <footer className="relative z-10 px-4 sm:px-6 lg:px-10 py-8 lg:py-12 border-t border-border/50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary  flex items-center justify-center">
-                <HageLogo className="w-8 h-8 text-primary-foreground" />
+              <div className="w-8 h-8 bg-primary rounded-lg  flex items-center justify-center">
+                <HageLogo className="size-8 rounded-lg text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-gradient">HAGE</span>
             </div>
 
             <p className="text-muted-foreground text-center md:text-right text-sm lg:text-base">
-              © 2025 HAGE Game Studio. Simple Joy for Everyone.
+              © 2025 HAGE Games. Simple Joy for Everyone.
             </p>
           </div>
         </div>
