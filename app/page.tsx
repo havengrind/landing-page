@@ -252,13 +252,14 @@ export default function HomePage() {
               }`}
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="relative w-full h-64 sm:h-80 lg:h-[400px]">
+              <div className="relative w-full h-64 sm:h-58 lg:h-[300px]">
                 {/* 3D Game Console Mockup */}
                 <div className="absolute inset-0 bg-gradient-to-br from-card to-muted rounded-3xl shadow-2xl animate-float">
                   <div className="p-6 lg:p-8 aspect-video flex flex-col justify-center items-center">
                     <Image
                       src={"/hero.gif"}
-                      fill
+                      width={1920}
+                      height={1080}
                       alt="hero.gif"
                       className="rounded-md aspect-video"
                       unoptimized
@@ -274,10 +275,10 @@ export default function HomePage() {
                   <Star className="w-6 sm:w-8 h-6 sm:h-8 text-primary-foreground" />
                 </div>
                 <div
-                  className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-14 sm:w-20 h-14 sm:h-20 bg-accent rounded-2xl flex items-center justify-center animate-float shadow-lg"
+                  className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-14 sm:w-16 h-14 sm:h-16 bg-accent rounded-2xl flex items-center justify-center animate-float shadow-lg"
                   style={{ animationDelay: "3s" }}
                 >
-                  <Users className="w-8 sm:w-10 h-8 sm:h-10 text-accent-foreground" />
+                  <Users className="size-8 sm:size-8 text-accent-foreground" />
                 </div>
               </div>
             </div>
