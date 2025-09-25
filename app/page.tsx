@@ -362,7 +362,9 @@ export default function HomePage() {
           </div>
 
           <div className="flex justify-center container">
-            <Logo275 className="size-40 md:size-[300px]" />
+            <a href="https://www.275studio.com/" target="_blank">
+              <Logo275 className="size-40 md:size-[300px] hover:scale-105 hover:border hover:border-primary rounded-lg cursor-pointer duration-200 transition-all" />
+            </a>
           </div>
         </div>
       </section>
