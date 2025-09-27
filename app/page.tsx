@@ -371,14 +371,14 @@ export default function HomePage() {
 
           <div className="flex justify-center container gap-x-10">
             <a href="https://www.275studio.com/" target="_blank">
-              <Logo275 className="size-40 md:size-[200] hover:scale-105 hover:border hover:border-primary rounded-lg cursor-pointer duration-200 transition-all" />
+              <Logo275 className="md:size-[200] size-24 hover:scale-105 hover:border hover:border-primary rounded-lg cursor-pointer duration-200 transition-all" />
             </a>
             <Image
               src={"/afairbnw.png"}
               width={100}
               alt="afairbnw.png"
               height={100}
-              className="size-40 md:size-[200] bg-black hover:scale-105 border border-white hover:border-primary rounded-lg cursor-pointer duration-200 transition-all"
+              className="size-24 p-4 md:size-[200] bg-black hover:scale-105 border border-white hover:border-primary rounded-lg cursor-pointer duration-200 transition-all"
             />
           </div>
         </div>
