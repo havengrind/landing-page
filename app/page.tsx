@@ -97,10 +97,17 @@ export default function HomePage() {
       <nav className="sticky top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="flex items-center justify-between p-4 lg:px-12">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center animate-pulse-glow">
-              <HageLogo className="size-10 rounded-lg text-primary-foreground" />
+            <div className="flex items-center justify-center">
+              {/* <HageLogo className="size-10 rounded-lg text-primary-foreground" /> */}
+              <Image
+                src={"/logo.png"}
+                width={192 / 2}
+                height={108 / 2}
+                alt="logo hage"
+                className=""
+              />
             </div>
-            <span className="text-2xl font-bold text-gradient">HAGE</span>
+            {/* <span className="text-2xl font-bold text-gradient">HAGE</span> */}
           </div>
 
           {/* Desktop Navigation */}
@@ -362,10 +369,17 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="flex justify-center container">
+          <div className="flex justify-center container gap-x-10">
             <a href="https://www.275studio.com/" target="_blank">
-              <Logo275 className="size-40 md:size-[300px] hover:scale-105 hover:border hover:border-primary rounded-lg cursor-pointer duration-200 transition-all" />
+              <Logo275 className="size-40 md:size-[200] hover:scale-105 hover:border hover:border-primary rounded-lg cursor-pointer duration-200 transition-all" />
             </a>
+            <Image
+              src={"/afairbnw.png"}
+              width={100}
+              alt="afairbnw.png"
+              height={100}
+              className="size-40 md:size-[200] bg-black hover:scale-105 border border-white hover:border-primary rounded-lg cursor-pointer duration-200 transition-all"
+            />
           </div>
         </div>
       </section>
@@ -538,10 +552,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg  flex items-center justify-center">
-                <HageLogo className="size-8 rounded-lg text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-gradient">HAGE</span>
+              <Image
+                src={"/logo.png"}
+                width={192 / 2}
+                height={108 / 2}
+                alt="logo hage"
+                className=""
+              />
             </div>
 
             <p className="text-muted-foreground text-center md:text-right text-sm lg:text-base">
