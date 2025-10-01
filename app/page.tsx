@@ -375,10 +375,10 @@ export default function HomePage() {
             </a>
             <Image
               src={"/afairbnw.png"}
-              width={100}
+              width={75}
               alt="afairbnw.png"
-              height={100}
-              className="size-24 p-4 md:size-[200] bg-black hover:scale-105 border border-white hover:border-primary rounded-lg cursor-pointer duration-200 transition-all"
+              height={75}
+              className="size-24 p-4 md:size-[200] bg-[#7437a9] hover:scale-105 hover:border hover:border-primary rounded-lg cursor-pointer duration-200 transition-all"
             />
           </div>
         </div>
